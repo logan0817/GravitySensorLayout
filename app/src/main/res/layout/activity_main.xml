@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    tools:context="com.logan.viewapp.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <com.logan.view.GravitySensorLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:gsl_maxHorizontalOffset="40dp"
+            app:gsl_maxVerticalOffset="40dp"
+            app:gsl_scrollDirection="reverse">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:src="@mipmap/bg_test_img" />
+        </com.logan.view.GravitySensorLayout>
+
+        <com.logan.view.GravitySensorLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:gsl_maxHorizontalOffset="40dp"
+            app:gsl_maxVerticalOffset="40dp"
+            app:gsl_scrollDirection="reverse">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:src="@mipmap/bg_test_img" />
+
+            <com.logan.view.GravitySensorLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:gsl_maxHorizontalOffset="60dp"
+                app:gsl_maxVerticalOffset="50dp"
+                app:gsl_scrollDirection="normal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@mipmap/ic_test_product2" />
+
+            </com.logan.view.GravitySensorLayout>
+
+        </com.logan.view.GravitySensorLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp">
+
+            <com.logan.view.GravitySensorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:gsl_maxHorizontalOffset="40dp"
+                app:gsl_maxVerticalOffset="40dp"
+                app:gsl_scrollDirection="reverse">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@mipmap/bg_test_img" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <com.logan.view.GravitySensorLayout
+                        android:id="@+id/sensorLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="50dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        app:gsl_maxHorizontalOffset="70dp"
+                        app:gsl_maxVerticalOffset="60dp"
+                        app:gsl_scrollDirection="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:src="@mipmap/ic_test_product1" />
+
+                    </com.logan.view.GravitySensorLayout>
+
+                    <com.logan.view.GravitySensorLayout
+                        android:id="@+id/sensorLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="50dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        app:gsl_maxHorizontalOffset="70dp"
+                        app:gsl_maxVerticalOffset="60dp"
+                        app:gsl_scrollDirection="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:src="@mipmap/ic_test_product2" />
+
+                    </com.logan.view.GravitySensorLayout>
+
+                    <com.logan.view.GravitySensorLayout
+                        android:id="@+id/sensorLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginBottom="50dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        app:gsl_maxHorizontalOffset="30dp"
+                        app:gsl_maxVerticalOffset="20dp"
+                        app:gsl_scrollDirection="reverse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:src="@mipmap/ic_test_product3" />
+
+                    </com.logan.view.GravitySensorLayout>
+
+                    <com.logan.view.GravitySensorLayout
+                        android:id="@+id/sensorLayout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginBottom="50dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        app:gsl_maxHorizontalOffset="30dp"
+                        app:gsl_maxVerticalOffset="20dp"
+                        app:gsl_scrollDirection="reverse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:src="@mipmap/ic_test_product4" />
+
+                    </com.logan.view.GravitySensorLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.logan.view.GravitySensorLayout>
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

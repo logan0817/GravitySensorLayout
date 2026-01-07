@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GravitySensorLayout">
+        <attr name="gsl_maxHorizontalOffset" format="dimension" />
+        <attr name="gsl_maxVerticalOffset" format="dimension" />
+        <attr name="gsl_scrollDuration" format="integer" />
+        <attr name="gsl_sensorThreshold" format="float" />
+        <attr name="gsl_scrollDirection" format="enum">
+            <enum name="normal" value="1" />
+            <enum name="reverse" value="-1" />
+        </attr>
+    </declare-styleable>
+</resources>
