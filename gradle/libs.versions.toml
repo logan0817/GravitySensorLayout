@@ -30,7 +30,7 @@ androidx_appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 androidx_activity = { module = "androidx.activity:activity-ktx", version.ref = "activity_version" }
 androidx_fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment_version" }
 androidx_constraint_layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint_layout_version" }
-gravitySensorLayout = { module = "io.github.logan0817:gravitySensorLayout", version.ref = "gravitySensorLayout-version" }
+gravitySensorLayout = { module = "io.github.logan0817:GravitySensorLayout", version.ref = "gravitySensorLayout-version" }
 
 [plugins]
 vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-maven-publish" }
