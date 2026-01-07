@@ -1,0 +1,2 @@
+# GravitySensorLayout
+GravitySensorLayout 是一个基于物理传感器的视差滚动容器，可以实现类似裸眼3D效果。
