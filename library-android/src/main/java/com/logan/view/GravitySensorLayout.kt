@@ -30,7 +30,7 @@ import kotlin.math.abs
  *
  *
  * @author Logan
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GravitySensorLayout @JvmOverloads constructor(
     context: Context,
