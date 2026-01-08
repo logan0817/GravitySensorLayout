@@ -42,7 +42,7 @@
    [![Maven Central](https://img.shields.io/maven-central/v/io.github.logan0817/GravitySensorLayout.svg?label=Latest%20Release)](https://central.sonatype.com/artifact/io.github.logan0817/GravitySensorLayout)
 
     ```gradle
-    implementation 'io.github.logan0817:GravitySensorLayout:1.0.0' // Replace with the version shown on the badge above
+    implementation 'io.github.logan0817:GravitySensorLayout:1.0.1' // Replace with the version shown on the badge above
     ```
 
 ---

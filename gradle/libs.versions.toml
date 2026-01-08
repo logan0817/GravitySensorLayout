@@ -14,7 +14,7 @@ appcompat_version = "1.7.1"
 activity_version = "1.9.2"
 fragment_version = "1.8.3"
 constraint_layout_version = "2.2.1"
-gravitySensorLayout-version = "1.0.0"
+gravitySensorLayout-version = "1.0.1"
 
 [libraries]
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }

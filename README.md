@@ -45,7 +45,7 @@ Vector Sensor），将设备的物理倾斜实时转化为子 View 的丝滑滚�
    [![Maven Central](https://img.shields.io/maven-central/v/io.github.logan0817/GravitySensorLayout.svg?label=Latest%20Release)](https://central.sonatype.com/artifact/io.github.logan0817/GravitySensorLayout)
 
     ```gradle
-   implementation 'io.github.logan0817:GravitySensorLayout:1.0.0' // 替换为上方徽章显示的最新版本
+   implementation 'io.github.logan0817:GravitySensorLayout:1.0.1' // 替换为上方徽章显示的最新版本
     ```
 
 ## 效果展示

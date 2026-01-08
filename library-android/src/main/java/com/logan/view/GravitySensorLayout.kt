@@ -30,7 +30,7 @@ import kotlin.math.abs
  *
  *
  * @author Logan
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GravitySensorLayout @JvmOverloads constructor(
     context: Context,
@@ -70,7 +70,7 @@ class GravitySensorLayout @JvmOverloads constructor(
     var maxVerticalOffset = 130f
 
     /** 滚动平滑过渡的持续时间 (单位: ms) */
-    var scrollDuration = 250
+    var scrollDuration = 0
 
     /** 传感器响应阈值角度。倾斜达到此角度时达到最大位移 (建议范围: 30.0 - 60.0) */
     var sensorThreshold = 45.0
@@ -101,7 +101,7 @@ class GravitySensorLayout @JvmOverloads constructor(
         try {
             maxHorizontalOffset = typedArray.getDimension(R.styleable.GravitySensorLayout_gsl_maxHorizontalOffset, 150f)
             maxVerticalOffset = typedArray.getDimension(R.styleable.GravitySensorLayout_gsl_maxVerticalOffset, 130f)
-            scrollDuration = typedArray.getInt(R.styleable.GravitySensorLayout_gsl_scrollDuration, 250)
+            scrollDuration = typedArray.getInt(R.styleable.GravitySensorLayout_gsl_scrollDuration, 0)
             sensorThreshold = typedArray.getFloat(R.styleable.GravitySensorLayout_gsl_sensorThreshold, 45f).toDouble()
             scrollDirection = typedArray.getInt(R.styleable.GravitySensorLayout_gsl_scrollDirection, DIRECTION_NORMAL)
         } finally {
@@ -180,6 +180,7 @@ class GravitySensorLayout @JvmOverloads constructor(
             val sensor = it.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
             // 只有当设备有该传感器时才注册
             if (sensor != null) {
+                // 将 SENSOR_DELAY_UI 改为 SENSOR_DELAY_GAME。虽然耗电稍微增加，但能提供 60Hz+ 的平滑数据。
                 it.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI)
                 isSensorRegistered = true
             }
