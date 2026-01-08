@@ -115,8 +115,8 @@ class GravitySensorLayout @JvmOverloads constructor(
      */
     private fun updateSensorState() {
         // isShown 会递归检查自身及所有父 View 是否可见
-        // windowVisibility == View.VISIBLE 确保当前窗口（Activity）在前台
-        val shouldRegister = isAttachedToWindow && (windowVisibility == View.VISIBLE) && isShown
+        // windowVisibility == VISIBLE 确保当前窗口（Activity）在前台
+        val shouldRegister = isAttachedToWindow && (windowVisibility == VISIBLE) && isShown
 
         if (shouldRegister) {
             registerSensor()
@@ -180,7 +180,6 @@ class GravitySensorLayout @JvmOverloads constructor(
             val sensor = it.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
             // 只有当设备有该传感器时才注册
             if (sensor != null) {
-                // 将 SENSOR_DELAY_UI 改为 SENSOR_DELAY_GAME。虽然耗电稍微增加，但能提供 60Hz+ 的平滑数据。
                 it.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI)
                 isSensorRegistered = true
             }
@@ -227,7 +226,12 @@ class GravitySensorLayout @JvmOverloads constructor(
      * 根据设备当前物理旋转状态（Surface.ROTATION_X）映射传感器的 X、Y 轴。
      */
     private fun remapCoordinatesByRotation() {
-        val rotation = windowManager?.defaultDisplay?.rotation ?: Surface.ROTATION_0
+        val rotation = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            display?.rotation
+        } else {
+            @Suppress("DEPRECATION")
+            windowManager?.defaultDisplay?.rotation
+        } ?: Surface.ROTATION_0
         var worldAxisX = SensorManager.AXIS_X
         var worldAxisY = SensorManager.AXIS_Y
 
@@ -252,7 +256,7 @@ class GravitySensorLayout @JvmOverloads constructor(
 
     /**
      * 计算并执行最终的位移逻辑。
-     * * @param pitch 设备的俯仰角 (点头动作)
+     * @param pitch 设备的俯仰角 (点头动作)
      * @param roll 设备的翻滚角 (侧倾动作)
      */
     private fun processFinalScroll(pitch: Double, roll: Double) {
